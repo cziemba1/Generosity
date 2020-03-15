@@ -1,0 +1,1248 @@
+/*General styling*/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, big, em, img, s, small, strike, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+vertical-align: baseline;
+list-style-type: none;
+text-decoration: none;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+font-family: 'Work Sans', sans-serif;
+font-size: 2rem;
+}
+$bg-dark-color: #082f33;
+$lg-color: #02d3e6;
+$lg-color-darker: #8ff6ff;
+$strawberry: #d63447;
+$strawberry-hover: #7a1d28;
+$cucumber: #9dc6a7;
+$cucumber-hover: #536858;
+$orange: #ffac41;
+$orange-hover: #835922;
+$lemon: #ffd868;
+$lemon-hover: #96803d;
+$blueberry: #b590ca;
+$blueberry-hover: #765f83;
+$bg: #1a0b00;
+
+
+
+@function px2vw($value-px, $layout-px) {
+    @return ($value-px/$layout-px)*100vw;
+}
+
+$root-font-size: 16px;
+
+html {
+    font-size: px2vw($root-font-size, 1200px);
+}
+
+@function px2rem($value-px) {
+	@return ($value-px/$root-font-size)*1rem;
+}
+
+body{
+    overflow-x: hidden;
+}
+#fp-nav{
+    margin-left: 92%;
+
+    ul li a{
+        color: $lg-color;
+        .fp-sr-only{
+            display: none;
+        }
+
+        span{
+            background-color: $lg-color-darker;
+
+        }
+    }
+    
+}
+/*Landing Page*/
+.fullpage__intro{
+    justify-content: flex-start;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: -1rem;
+    padding: 5rem;
+    z-index: 200;
+    .nav-container{
+        display: none;
+    }
+
+    .logo a{
+        font-size: 2rem;
+        font-weight: 700;
+        color: $lg-color;
+        position: fixed;
+    }
+    
+}
+
+.section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 7rem;
+
+    .title-main{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -5%;
+
+        h1{
+            color: $lg-color;
+            font-size: 5.8rem;
+            letter-spacing: .5rem;
+        }
+
+        p{
+            color: $bg-dark-color;
+            font-weight: 300;
+            font-size: 2.3rem;
+            margin-top: 3rem;
+            padding-right: 2rem;
+        }
+
+        a{
+            margin-top: 9rem;
+            color: $lg-color;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: all .3s ease-in-out;
+
+            &:hover{
+                color: $bg-dark-color;
+            }
+
+            &:hover ion-icon{
+                margin-right: 1.5rem;
+            }
+
+            ion-icon{
+                margin-right: 1rem;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+
+    #scene{
+        width: 100vw;
+        height: 40rem;
+        position: absolute;
+
+        img{
+            width: 50%;
+            margin-top: -18rem;
+            margin-left: 32%;
+            position: absolute;
+        }
+    }
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 7rem;
+
+    .flavor-section{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -29%;
+
+        h1{
+            font-size: 4rem;
+            color: white;
+            font-weight: 600;
+            width: 80%;
+        }
+
+        .calories{
+            display: flex;
+            margin: 2rem;
+
+            p{
+                font-size: 5rem;
+                color: white;
+                margin-left: .5rem;
+            }
+
+            div{
+                margin-top: .5rem;
+                p{
+                    font-size: 2rem;
+                    color: $lg-color-darker;
+                }
+            }
+        }
+
+        .img{
+            display: flex;
+
+            img{
+                width: 150%;
+                object-fit: cover;
+                position: absolute;
+                filter: brightness(.9);
+            }
+
+            .right{
+                left: -24%;
+                top: 25rem;
+            }
+
+            .bottle{
+                left: -23%;
+                top: 25rem;
+                z-index: 10;
+            }
+
+            .left{
+                left: -22%;
+                top: 25rem;
+                z-index: 0;
+            }
+
+            .explore{
+                position: absolute;
+                cursor: pointer;
+                z-index: 200;
+                top: 82rem;
+                left: 75%;
+                color: white;
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 400;
+                transition: all .3s ease-in-out;
+
+                &:hover{
+                    color: $lg-color;
+                }
+
+                &:hover ion-icon{
+                    margin-right: 1.5rem;
+                }
+
+                ion-icon{
+                    margin-right: 1rem;
+                    transition: all .3s ease-in-out;
+                    color: $lg-color-darker;
+                }
+            }
+        }
+    }
+}
+.color{
+    font-size: 4rem;
+}
+.color1{
+    color: $strawberry;
+}
+.color2{
+    color: $blueberry;
+}
+.color3{
+    color: $lemon;
+}
+.color4{
+    color: $cucumber;
+}
+.color5{
+    color: $orange;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $lg-color-darker;
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        margin-top: 5rem;
+        color: $bg-dark-color;
+
+        h1{
+            font-size: 5rem;
+            margin: 4rem 0;
+        }
+
+        .info-contact{
+            display: flex;
+            flex-direction: column;
+
+            p{
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                line-height: 4rem;
+                color: $bg-dark-color;
+            }
+
+            a{
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                line-height: 4rem;
+                color: $bg-dark-color;
+            }
+        }
+    }
+    .copyright{
+        margin-top: 10rem;
+        padding: 0 2rem;
+        font-size: 2rem;
+        color: $lg-color-darker;
+    }
+}
+/*Items Page*/
+.items{
+    background-color: $bg;
+}
+.fs-v2{
+    margin-top: 6rem;
+}
+.items{
+    height: 90vh;
+}
+.item-info{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    padding: 3rem;
+
+    .item-info-desc{
+        display: flex;
+        flex-direction: column;
+        margin-top: 6rem;
+        justify-content: space-evenly;
+
+        h2{
+            font-size: 5rem;
+            color: $lg-color;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            font-size: 2.5rem;
+            color: $bg-dark-color;
+            margin-bottom: 2rem;
+        }
+
+        ul{
+            padding: 0 3rem;
+            margin-bottom: 5rem;
+            li{
+                list-style: circle;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    table{
+        width: 100%;
+        tbody{
+            tr{
+                
+                th{
+                    border-bottom: 1px solid $lg-color;
+                    text-align: start;
+                    padding: .9rem;
+                    font-size: 2.5rem;
+                }
+                td{
+                    border-bottom: 1px solid $lg-color;
+                    text-align: end;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+    p{
+        padding: 1rem;
+        font-weight: 300;
+    }
+}
+.benefits-item{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+
+    h2{
+        font-size: 3.5rem;
+        color: $lemon;
+        padding: 3rem 0;
+    }
+    p{
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+}
+
+.next-item{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $blueberry-hover;
+    
+    a{
+        font-size: 4rem;
+        color: $bg-dark-color;
+        height: 20vh;
+        padding: 20% 0;
+        text-align: center;
+        width: 100%;
+        background-color: white;
+        transition: all .3s ease-in;
+        
+        &:hover{
+            background-color: $blueberry-hover;
+            color: white;
+        }
+    }
+}
+@media screen and (min-width: 600px){
+/*Landing Page*/
+    .navbar{
+        top: 0rem;
+        padding: 5rem;
+        z-index: 200;
+        width: 100%;
+
+        .nav-container{
+            display: flex;
+            
+            li a{
+                margin: 0 1rem;
+                color: $bg-dark-color;
+                transition: all .3s ease-in;
+
+                &:hover{
+                    color: $lg-color;
+                }
+            }
+        }
+
+        .logo a{
+            font-size: 2rem;
+            font-weight: 700;
+            color: $lg-color;
+            position: fixed;
+        }
+    }
+
+    .section{
+
+        .flavor-section{
+            top: -20%;
+
+            .img{
+
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    filter: brightness(.9);
+                }
+
+                .right{
+                    left: -15%;
+                    top: 24rem;
+                }
+
+                .bottle{
+                    left: -14%;
+                    top: 24rem;
+                }
+
+                .left{
+                    left: -13%;
+                    top: 24rem;
+                }
+
+                .explore{
+                    top: 45rem;
+                    left: 75%;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+
+        .contact{
+            padding: 2rem 2rem;
+            margin-top: 3rem;
+
+            h1{
+                font-size: 3rem;
+                margin: 3rem 0;
+            }
+
+            .info-contact{
+
+                p{
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    line-height: 3rem;
+                }
+
+                a{
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 3rem;
+                }
+            }
+        }
+        .copyright{
+            font-size: 1.5rem;
+        }
+    }
+    /*Items Page*/
+    .fs-v2{
+        margin-top: 3rem;
+    }
+    .items{
+        height: 100vh;
+    }
+    .item-info{
+
+        .item-info-desc{
+
+            h2{
+                font-size: 3rem;
+            }
+
+            p{
+                font-size: 1.9rem;
+            }
+
+            ul{
+                li{
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        table{
+            width: 100%;
+            tbody{
+                tr{
+                    
+                    th{
+                        font-size: 2rem;
+                    }
+                    td{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        p{
+            font-size: 1.4rem;
+        }
+    }
+    .benefits-item{
+
+        h2{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .next-item{
+        margin-top: 0rem;
+        
+        a{
+            font-size: 3rem;
+            padding:20% 0;
+            
+        }
+    }
+}
+@media screen and (min-width: 800px){
+/*Landing Page*/
+    .navbar{
+        padding: 2rem;
+
+        .nav-container{
+            display: flex;
+            
+            li a{
+                font-size: 1.5rem;
+            }
+        }
+
+        .logo a{
+            font-size: 1.5rem;
+        }
+    }
+
+    .section1{
+        padding: 7rem;
+
+        .title-main{
+            top: -10%;
+
+            h1{
+                font-size: 5.8rem;
+            }
+
+            p{
+                font-size: 1.5rem;
+                padding-right: .1rem;
+                left: 56%;
+                top: -8rem;
+                width: 45%;
+                position: relative;
+            }
+
+            a{
+                margin-top: -10rem;
+                font-size: 1.8rem;
+            }
+        }
+
+        #scene{
+            width: 100vw;
+            height: 40rem;
+            position: absolute;
+
+            img{
+                width: 25%;
+                margin-top: -6rem;
+                margin-left: 50%;
+                position: absolute;
+            }
+        }
+    }
+
+    .color{
+        font-size: 2.5rem;
+    }
+
+    .section{
+
+        .flavor-section{
+            top: -20%;
+
+            h1{
+                font-size: 2.5rem;
+            }
+
+            .calories{
+                margin: 2rem;
+
+                p{
+                    font-size: 3rem;
+                    color: white;
+                    margin-left: .5rem;
+                }
+
+                div{
+                    margin-top: .8rem;
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+
+            .img{
+
+                img{
+                    width: 120%;
+                    object-fit: cover;
+                    position: absolute;
+                    filter: brightness(.9);
+                }
+
+                .right{
+                    left: -15%;
+                    top: 8rem;
+                }
+
+                .bottle{
+                    left: -14%;
+                    top: 8rem;
+                }
+
+                .left{
+                    left: -13%;
+                    top: 8rem;
+                }
+                .explore{
+                    top: 32rem;
+                    left: 85%;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+
+        .contact{
+            padding: 2rem 2rem;
+            margin-top: 3rem;
+
+            h1{
+                font-size: 3rem;
+                margin: 3rem 0;
+            }
+
+            .info-contact{
+
+                p{
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    line-height: 3rem;
+                }
+
+                a{
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 3rem;
+                }
+            }
+        }
+        .copyright{
+            font-size: 1.5rem;
+        }
+    }
+    /*Items Page*/
+    .fs-v2{
+        margin-top: 3rem;
+    }
+    .items{
+        height: 100vh;
+    }
+    .item-info{
+
+        .item-info-desc{
+
+            h2{
+                font-size: 3rem;
+            }
+
+            p{
+                font-size: 1.9rem;
+            }
+
+            ul{
+                li{
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        table{
+            width: 100%;
+            tbody{
+                tr{
+                    
+                    th{
+                        font-size: 2rem;
+                    }
+                    td{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        p{
+            font-size: 1.4rem;
+        }
+    }
+    .benefits-item{
+
+        h2{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .next-item{
+        margin-top: 0rem;
+        
+        a{
+            font-size: 3rem;
+            padding:20% 0;
+            
+        }
+    }
+}
+
+@media screen and (min-width: 1000px){
+/*Landing Page*/
+    .navbar{
+        padding: 2rem;
+
+        .nav-container{
+            display: flex;
+            margin-top: -.5rem;
+            
+            li{
+                a{
+                font-size: 1.2rem;
+                margin-top: -.5rem;
+                }
+            }
+        }
+
+        .logo a{
+            font-size: 1.2rem;
+        }
+    }
+
+    .section1{
+        padding: 5rem;
+
+        .title-main{
+            top: 0%;
+            left: 10%;
+
+            h1{
+                font-size: 6.6rem;
+                letter-spacing: 0rem;
+                line-height: 6.2rem;
+            }
+
+            p{
+                font-size: 1.2rem;
+                left: 50%;
+                top: -9rem;
+                width: 38%;
+            }
+
+            a{
+                margin-top: -8rem;
+            }
+        }
+
+        #scene{
+
+            img{
+                width: 18%;
+                margin-top: -4rem;
+                margin-left: 70%;
+                position: absolute;
+            }
+        }
+    }
+
+    .section{
+
+        .flavor-section{
+
+            .img{
+
+                img{
+                    width: 95%;
+                    object-fit: cover;
+                    position: absolute;
+                    filter: brightness(.9);
+                }
+
+                .right{
+                    left: 1%;
+                    top: 0rem;
+                }
+
+                .bottle{
+                    left: 2%;
+                    top: 0rem;
+                }
+
+                .left{
+                    left: 3%;
+                    top: 0rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+        
+        .contact{
+            flex-direction: row;
+            padding: 0rem 2rem;
+            margin-top: 1rem;
+
+            h1{
+                font-size: 2.5rem;
+                margin: 4rem 0;
+            }
+
+            .info-contact{
+                margin: 4rem 0 4rem 18rem;
+                p{
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    line-height: 2rem;
+                }
+
+                a{
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+        .copyright{
+            font-size: 1rem;
+            margin-top:4rem;
+        }
+    }
+    /*Items Page*/
+    .fs-v2{
+        margin-top: 3rem;
+    }
+    .items{
+        height: 100vh;
+    }
+    .item-info{
+
+        .item-info-desc{
+
+            h2{
+                font-size: 3rem;
+            }
+
+            p{
+                font-size: 1.9rem;
+            }
+
+            ul{
+                li{
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        table{
+            width: 100%;
+            tbody{
+                tr{
+                    
+                    th{
+                        font-size: 2rem;
+                    }
+                    td{
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+        p{
+            font-size: 1.4rem;
+        }
+    }
+    .benefits-item{
+
+        h2{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+        }
+    }
+
+    .next-item{
+        margin-top: 0rem;
+        
+        a{
+            font-size: 3rem;
+            padding:20% 0;
+            
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+/*Landing Page*/
+    .navbar{
+        padding: 2rem;
+
+        .nav-container{
+            
+            li{
+                a{
+                font-size: 1rem;
+                margin-top: -.5rem;
+                }
+            }
+        }
+
+        .logo a{
+            font-size: 1rem;
+        }
+    }
+
+    .section1{
+        padding: 5rem;
+
+        .title-main{
+            top: 0%;
+            left: 1%;
+
+            h1{
+                font-size: 5.5rem;
+                line-height: 5.9rem;
+            }
+
+            p{
+                left:25%;
+                top: -1rem;
+            }
+
+            a{
+                margin-top: -6.5rem;
+                font-size: 1.3rem;
+            }
+        }
+
+        #scene{
+
+            img{
+                width: 18%;
+                margin-top: -25rem;
+                margin-left: 65%;
+            }
+        }
+    }
+    .color{
+        font-size: 2rem;
+    }
+    .section{
+
+        .flavor-section{
+            h1{
+                font-size: 2rem;
+                width: 60%;
+            }
+
+            .calories{
+                margin-top: 1rem;
+            }
+            .img{
+
+                img{
+                    width: 70%;
+                }
+
+                .right{
+                    left: 25%;
+                    top: 3rem;
+                }
+
+                .bottle{
+                    left: 26%;
+                    top: 3rem;
+                }
+
+                .left{
+                    left: 28%;
+                    top: 3rem;
+                }
+
+                .explore{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .footer{
+        padding: 0 12rem;
+        .contact{
+            padding: 0rem;
+            margin-top: 0rem;
+
+            h1{
+                font-size: 2.5rem;
+                margin: 4rem 0;
+            }
+
+            .info-contact{
+                margin: 4rem 0 4rem 18rem;
+                p{
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    line-height: 2rem;
+                }
+
+                a{
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+        .copyright{
+            font-size: 1rem;
+            margin-top:4rem;
+        }
+    }
+    /*Items Page*/
+    .fs-v2{
+        margin-top: 3rem;
+    }
+    .items{
+        height: 100vh;
+    }
+    .item-info{
+        padding: 0 15rem;
+
+        .item-info-desc{
+
+            h2{
+                font-size: 2rem;
+            }
+
+            p{
+                font-size: 1rem;
+            }
+
+            ul{
+                li{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        table{
+            margin-top: -4rem;
+            padding: 0 4rem;
+            tbody{
+                tr{
+                    
+                    th{
+                        font-size: 1rem;
+                    }
+                    td{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        p{
+            font-size: .8rem;
+        }
+    }
+    .benefits-item{
+        padding: 0 15rem;
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            padding: 0 3rem;
+            font-size: 1rem;
+            margin-bottom: 4rem;
+        }
+    }
+
+    .next-item{
+        margin-top: 0rem;
+        
+        a{
+            font-size: 3rem;
+            padding:10% 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1300px){
+/*Landing Page*/
+    .section1{
+
+        #scene{
+
+            img{
+                width: 15%;
+                margin-top: -20rem;
+                margin-left: 65%;
+            }
+        }
+    }
+    .color{
+        font-size: 1.5rem;
+    }
+    .section{
+
+        .flavor-section{
+            h1{
+                margin-top: 2rem;
+                font-size: 1.5rem;
+                width: 40%;
+            }
+
+            .img{
+                .explore{
+                    top: 25rem;
+                    left: 85%;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .fs-v2{
+        .title-item-1{
+            margin-top: -4rem;
+            position: relative;
+        }
+        img{
+            position: relative;
+            margin-top: -5rem;
+        }
+    }
+
+    .footer{
+        
+        .contact{
+            padding: 0rem 2rem;
+            margin-top: 0rem;
+
+            h1{
+                font-size: 2.5rem;
+                margin: 2rem 0;
+            }
+
+            .info-contact{
+                margin: 2rem 0 4rem 18rem;
+                p{
+                    font-size: 1.1rem;
+                }
+
+                a{
+                    font-size: 1.1rem;
+                    margin-bottom: 0rem;
+                }
+            }
+        }
+        .copyright{
+            margin-top:1rem;
+        }
+    }
+    /*Items Page*/
+}

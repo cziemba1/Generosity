@@ -1,35 +1,30 @@
 /*General styling*/
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, big, em, img, s, small, strike, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-vertical-align: baseline;
-list-style-type: none;
-text-decoration: none;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
-font-family: 'Work Sans', sans-serif;
-font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    list-style-type: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2rem;
 }
-$bg-dark-color: #082f33;
+$bg-dark-color: #00394f;
 $lg-color: #02d3e6;
 $lg-color-darker: #8ff6ff;
-$strawberry: #d63447;
-$strawberry-hover: #7a1d28;
-$cucumber: #9dc6a7;
-$cucumber-hover: #536858;
+$strawberry: #7e3636;
+$cucumber: #58816F;
 $orange: #ffac41;
-$orange-hover: #835922;
 $lemon: #ffd868;
-$lemon-hover: #96803d;
-$blueberry: #b590ca;
-$blueberry-hover: #765f83;
-$bg: #1a0b00;
+$blueberry: #69375c;
+$bg: #202020;
 
 
-
+//Calc for responsive font)
 @function px2vw($value-px, $layout-px) {
     @return ($value-px/$layout-px)*100vw;
 }
@@ -38,15 +33,17 @@ $root-font-size: 16px;
 
 html {
     font-size: px2vw($root-font-size, 1200px);
-}
+} 
 
 @function px2rem($value-px) {
 	@return ($value-px/$root-font-size)*1rem;
-}
+} //return pixel to rems
 
 body{
     overflow-x: hidden;
 }
+
+//Original FullPage.js style override
 #fp-nav{
     margin-left: 92%;
 
@@ -63,6 +60,7 @@ body{
     }
     
 }
+/*------------Content styling------------*/
 /*Landing Page*/
 .fullpage__intro{
     justify-content: flex-start;
@@ -303,7 +301,7 @@ body{
         margin-top: 10rem;
         padding: 0 2rem;
         font-size: 2rem;
-        color: $lg-color-darker;
+        color: $bg;
     }
 }
 /*Items Page*/
@@ -395,25 +393,55 @@ body{
 .next-item{
     margin-top: 2rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid $blueberry-hover;
+    border-top: 1px solid $blueberry;
     
     a{
         font-size: 4rem;
         color: $bg-dark-color;
-        height: 20vh;
-        padding: 20% 0;
+        height: 10vh;
         text-align: center;
         width: 100%;
         background-color: white;
         transition: all .3s ease-in;
         
         &:hover{
-            background-color: $blueberry-hover;
+            background-color: $blueberry;
             color: white;
         }
+    }
+}
+
+#next-orange{
+    border-top: 1px solid $orange;
+
+    a:hover{
+        background-color: $orange;
+    }
+}
+
+#next-strawberry{
+    border-top: 1px solid $strawberry;
+
+    a:hover{
+        background-color: $strawberry;
+    }
+}
+
+#next-lemon{
+    border-top: 1px solid $lemon;
+
+    a:hover{
+        background-color: $lemon;
+    }
+}
+
+#next-cucumber{
+    border-top: 1px solid $cucumber;
+
+    a:hover{
+        background-color: $cucumber;
     }
 }
 @media screen and (min-width: 600px){
@@ -573,7 +601,6 @@ body{
         
         a{
             font-size: 3rem;
-            padding:20% 0;
             
         }
     }
@@ -669,7 +696,7 @@ body{
             .img{
 
                 img{
-                    width: 120%;
+                    width: 100%;
                     object-fit: cover;
                     position: absolute;
                     filter: brightness(.9);
@@ -701,8 +728,8 @@ body{
     .footer{
 
         .contact{
-            padding: 2rem 2rem;
-            margin-top: 3rem;
+            padding: 0rem 2rem;
+            margin-top: 2rem;
 
             h1{
                 font-size: 3rem;
@@ -712,13 +739,13 @@ body{
             .info-contact{
 
                 p{
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     margin-bottom: 2rem;
                     line-height: 3rem;
                 }
 
                 a{
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     margin-bottom: 1.5rem;
                     line-height: 3rem;
                 }
@@ -922,49 +949,55 @@ body{
         height: 100vh;
     }
     .item-info{
+        padding: 0 15rem;
+        flex-direction: row;
 
         .item-info-desc{
 
             h2{
-                font-size: 3rem;
+                font-size: 2rem;
             }
 
             p{
-                font-size: 1.9rem;
+                font-size: 1rem;
             }
 
             ul{
                 li{
-                    font-size: 1.9rem;
+                    font-size: 1rem;
                 }
             }
         }
 
         table{
-            width: 100%;
+            margin-top: 15rem;
+            padding: 0 8rem;
             tbody{
                 tr{
                     
                     th{
-                        font-size: 2rem;
+                        font-size: 1rem;
                     }
                     td{
-                        font-size: 2rem;
+                        font-size: 1rem;
                     }
                 }
             }
         }
-        p{
-            font-size: 1.4rem;
+        .daily{
+            font-size: .8rem;
+            margin-top: 35rem;
+            width: 39rem;
+            margin-left: -18rem;
         }
     }
     .benefits-item{
-
+        padding: 2rem 6rem 4rem 6rem;
         h2{
-            font-size: 3rem;
+            font-size: 2rem;
         }
         p{
-            font-size: 2rem;
+            font-size: 1.1rem;
         }
     }
 
@@ -973,8 +1006,8 @@ body{
         
         a{
             font-size: 3rem;
-            padding:20% 0;
-            
+            height: 8rem;
+            padding: 2rem;
         }
     }
 }
@@ -1048,7 +1081,7 @@ body{
             .img{
 
                 img{
-                    width: 70%;
+                    width: 65%;
                 }
 
                 .right{
@@ -1074,7 +1107,7 @@ body{
     }
 
     .footer{
-        padding: 0 12rem;
+        padding: 0 10rem;
         .contact{
             padding: 0rem;
             margin-top: 0rem;
@@ -1087,13 +1120,13 @@ body{
             .info-contact{
                 margin: 4rem 0 4rem 18rem;
                 p{
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     margin-bottom: 2rem;
                     line-height: 2rem;
                 }
 
                 a{
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     margin-bottom: 1.5rem;
                     line-height: 2rem;
                 }
@@ -1101,7 +1134,8 @@ body{
         }
         .copyright{
             font-size: 1rem;
-            margin-top:4rem;
+            margin-top:0rem;
+            margin-bottom: 3rem;
         }
     }
     /*Items Page*/
@@ -1110,45 +1144,6 @@ body{
     }
     .items{
         height: 100vh;
-    }
-    .item-info{
-        padding: 0 15rem;
-
-        .item-info-desc{
-
-            h2{
-                font-size: 2rem;
-            }
-
-            p{
-                font-size: 1rem;
-            }
-
-            ul{
-                li{
-                    font-size: 1rem;
-                }
-            }
-        }
-
-        table{
-            margin-top: -4rem;
-            padding: 0 4rem;
-            tbody{
-                tr{
-                    
-                    th{
-                        font-size: 1rem;
-                    }
-                    td{
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-        p{
-            font-size: .8rem;
-        }
     }
     .benefits-item{
         padding: 0 15rem;
@@ -1163,11 +1158,9 @@ body{
     }
 
     .next-item{
-        margin-top: 0rem;
         
         a{
-            font-size: 3rem;
-            padding:10% 0;
+            font-size: 2rem;
         }
     }
 }
@@ -1218,7 +1211,6 @@ body{
     }
 
     .footer{
-        
         .contact{
             padding: 0rem 2rem;
             margin-top: 0rem;
@@ -1241,8 +1233,8 @@ body{
             }
         }
         .copyright{
-            margin-top:1rem;
+            margin-top:0rem;
+            margin-bottom: 3rem;
         }
     }
-    /*Items Page*/
 }

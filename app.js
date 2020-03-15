@@ -3,7 +3,7 @@
 new fullpage("#fullpage", {
     anchors: ['home', 'strawberry', 'blueberry', 'lemon', 'cucumber', 'orange', 'contact'],
     navigation: true,
-    sectionsColor: ["#ffffff", "#1a0b00", "#1a0b00", "#1a0b00", "#1a0b00", "#1a0b00", "#02d3e6"],
+    sectionsColor: ["#ffffff", "#202020", "#202020", "#202020", "#202020", "#202020", "#02d3e6"],
     paddingTop: "0em",
     onLeave: (origin, destination, direction) => { //animation for the rest of slides
         const section = destination.item;
